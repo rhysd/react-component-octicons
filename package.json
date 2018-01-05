@@ -1,6 +1,6 @@
 {
   "name": "react-component-octicons",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Zero-dependency React components for Octicons",
   "main": "index.js",
   "dependencies": {},
