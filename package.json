@@ -1,6 +1,6 @@
 {
   "name": "react-component-octicons",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Zero-dependency React components for Octicons",
   "main": "index.js",
   "dependencies": {},
@@ -8,6 +8,7 @@
     "@types/node": "^8.5.6",
     "@types/react": "^16.0.34",
     "@types/react-dom": "^16.0.3",
+    "browserify": "^15.0.0",
     "octicons": "^7.0.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -17,20 +18,23 @@
   },
   "scripts": {
     "gen": "ts-node ./scripts/generate.ts",
-    "lint": "tslint index.tsx test/*.tsx",
-    "test-dts": "tsc --jsx react --noEmit test-dts/test.tsx index.d.ts",
-    "test": "tsc -p . && mocha test/*.js",
-    "preversion": "npm run lint && npm run test-dts && npm run test"
+    "tsc": "tsc --pretty -p .",
+    "build": "npm run gen && npm run tsc",
+    "build-smoke-test": "tsc --pretty -p ./test/smoke && browserify -d ./test/smoke/test.js -o ./test/smoke/bundle.js",
+    "build-dts": "tsc --pretty -p . -d",
+    "test-dts": "tsc --jsx react --noEmit test/dts/test.tsx index.d.ts",
+    "test": "npm run build-smoke-test && npm run test-dts",
+    "preversion": "npm run test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rhysd/react-component-bytesize-icons.git"
+    "url": "git+https://github.com/rhysd/react-component-octicons.git"
   },
   "keywords": [
     "react",
     "component",
     "icon",
-    "bytesize icon"
+    "octicons"
   ],
   "author": "rhysd <lin90162@yahoo.co.jp>",
   "license": "MIT",

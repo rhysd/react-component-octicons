@@ -22,11 +22,16 @@ const elems = [];
 
 const octicons = require('octicons');
 for (const name of Object.getOwnPropertyNames(octicons)) {
-    const octicon: Octicon = octicons[name];
-    if (octicon.symbol !== name) {
+    const o: Octicon = octicons[name];
+    if (o.symbol !== name) {
         continue;
     }
-    elems.push(`  "${octicon.symbol}": ${octicon.path},`);
+    const svg = `<svg id="octicon-${o.symbol}" viewBox="${o.options.viewBox}" width="${o.width}" height="${
+        o.height
+    }" stroke="currentcolor">
+    ${o.path}
+  </svg>`;
+    elems.push(`  "${o.symbol}": ${svg},`);
 }
 
 const template = fs.readFileSync(path.join(__dirname, 'template.ts'), 'utf8');
