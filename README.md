@@ -1,5 +1,6 @@
 React Components for Octicons
 =============================
+[![Build Status](https://travis-ci.org/rhysd/react-component-octicons.svg?branch=master)](https://travis-ci.org/rhysd/react-component-octicons)
 
 [react-component-octicons][] is a [React][] component library for [Octicons][].
 This library wraps SVG icons and provides one React component `<Octicon>`.
