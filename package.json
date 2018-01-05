@@ -18,10 +18,9 @@
   },
   "scripts": {
     "gen": "ts-node ./scripts/generate.ts",
-    "tsc": "tsc --pretty -p .",
+    "tsc": "tsc --pretty -p . && tsc --pretty -p . -d",
     "build": "npm run gen && npm run tsc",
     "build-smoke-test": "tsc --pretty -p ./test/smoke && browserify -d ./test/smoke/test.js -o ./test/smoke/bundle.js",
-    "build-dts": "tsc --pretty -p . -d",
     "test-dts": "tsc --jsx react --noEmit test/dts/test.tsx index.d.ts",
     "test": "npm run build-smoke-test && npm run test-dts",
     "preversion": "npm run test"

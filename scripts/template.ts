@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 export interface OcticonProps {
-    name: string;
+    name: OcticonSymbol;
 }
 
 export default class Octicon extends React.PureComponent<OcticonProps> {

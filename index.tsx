@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 export interface OcticonProps {
-    name: string;
+    name: OcticonSymbol;
 }
 
 export default class Octicon extends React.PureComponent<OcticonProps> {
@@ -9,7 +9,7 @@ export default class Octicon extends React.PureComponent<OcticonProps> {
         return OCTICON_SVGS[this.props.name];
     }
 }
-const OCTICON_SVGS: {[name: string]: JSX.Element} = {
+const OCTICON_SVGS: {[T in OcticonSymbol]: JSX.Element} = {
   "alert": <svg id="octicon-alert" viewBox="0 0 16 16" width="16" height="16" stroke="currentcolor" fill="currentcolor">
     <path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"/>
   </svg>,
@@ -536,3 +536,180 @@ const OCTICON_SVGS: {[name: string]: JSX.Element} = {
     <path fill-rule="evenodd" d="M10 7H6l3-7-9 9h4l-3 7z"/>
   </svg>,
 };
+
+export type OcticonSymbol =
+  'alert' |
+  'arrow-down' |
+  'arrow-left' |
+  'arrow-right' |
+  'arrow-small-down' |
+  'arrow-small-left' |
+  'arrow-small-right' |
+  'arrow-small-up' |
+  'arrow-up' |
+  'beaker' |
+  'bell' |
+  'bold' |
+  'book' |
+  'bookmark' |
+  'briefcase' |
+  'broadcast' |
+  'browser' |
+  'bug' |
+  'calendar' |
+  'check' |
+  'checklist' |
+  'chevron-down' |
+  'chevron-left' |
+  'chevron-right' |
+  'chevron-up' |
+  'circle-slash' |
+  'circuit-board' |
+  'clippy' |
+  'clock' |
+  'cloud-download' |
+  'cloud-upload' |
+  'code' |
+  'comment' |
+  'comment-discussion' |
+  'credit-card' |
+  'dash' |
+  'dashboard' |
+  'database' |
+  'desktop-download' |
+  'device-camera' |
+  'device-camera-video' |
+  'device-desktop' |
+  'device-mobile' |
+  'diff' |
+  'diff-added' |
+  'diff-ignored' |
+  'diff-modified' |
+  'diff-removed' |
+  'diff-renamed' |
+  'ellipsis' |
+  'eye' |
+  'file' |
+  'file-binary' |
+  'file-code' |
+  'file-directory' |
+  'file-media' |
+  'file-pdf' |
+  'file-submodule' |
+  'file-symlink-directory' |
+  'file-symlink-file' |
+  'file-zip' |
+  'flame' |
+  'fold' |
+  'gear' |
+  'gift' |
+  'gist' |
+  'gist-secret' |
+  'git-branch' |
+  'git-commit' |
+  'git-compare' |
+  'git-merge' |
+  'git-pull-request' |
+  'globe' |
+  'grabber' |
+  'graph' |
+  'heart' |
+  'history' |
+  'home' |
+  'horizontal-rule' |
+  'hubot' |
+  'inbox' |
+  'info' |
+  'issue-closed' |
+  'issue-opened' |
+  'issue-reopened' |
+  'italic' |
+  'jersey' |
+  'kebab-horizontal' |
+  'kebab-vertical' |
+  'key' |
+  'keyboard' |
+  'law' |
+  'light-bulb' |
+  'link' |
+  'link-external' |
+  'list-ordered' |
+  'list-unordered' |
+  'location' |
+  'lock' |
+  'logo-gist' |
+  'logo-github' |
+  'mail' |
+  'mail-read' |
+  'mark-github' |
+  'markdown' |
+  'megaphone' |
+  'mention' |
+  'milestone' |
+  'mirror' |
+  'mortar-board' |
+  'mute' |
+  'no-newline' |
+  'note' |
+  'octoface' |
+  'organization' |
+  'package' |
+  'paintcan' |
+  'pencil' |
+  'person' |
+  'pin' |
+  'plug' |
+  'plus' |
+  'plus-small' |
+  'primitive-dot' |
+  'primitive-square' |
+  'project' |
+  'pulse' |
+  'question' |
+  'quote' |
+  'radio-tower' |
+  'reply' |
+  'repo' |
+  'repo-clone' |
+  'repo-force-push' |
+  'repo-forked' |
+  'repo-pull' |
+  'repo-push' |
+  'rocket' |
+  'rss' |
+  'ruby' |
+  'screen-full' |
+  'screen-normal' |
+  'search' |
+  'server' |
+  'settings' |
+  'shield' |
+  'sign-in' |
+  'sign-out' |
+  'smiley' |
+  'squirrel' |
+  'star' |
+  'stop' |
+  'sync' |
+  'tag' |
+  'tasklist' |
+  'telescope' |
+  'terminal' |
+  'text-size' |
+  'three-bars' |
+  'thumbsdown' |
+  'thumbsup' |
+  'tools' |
+  'trashcan' |
+  'triangle-down' |
+  'triangle-left' |
+  'triangle-right' |
+  'triangle-up' |
+  'unfold' |
+  'unmute' |
+  'unverified' |
+  'verified' |
+  'versions' |
+  'watch' |
+  'x' |
+  'zap';

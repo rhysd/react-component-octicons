@@ -35,6 +35,31 @@ render(
 );
 ```
 
+## Typo Safety for Icon Names
+
+`name` property of `<Octicon>` is stricted to actual symbol names. For example, following code contains typo `allow-right` (`arrow-right` is correct).
+
+```typescript
+import * as React from 'react';
+import { render } from 'react-dom';
+import Octicon from '../../index';
+
+// ERROR! 'allow-right' is typo of 'arrow-right'
+render(
+    <Octicon name="allow-right" />,
+    document.getElementById('root'),
+);
+```
+
+It falls into a compilation error.
+
+```
+test.tsx(5,17): error TS2322: Type '{ name: "allow-right"; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<Octicon> & Readonly<{ children?: ReactNode; }> & R...'.
+  Type '{ name: "allow-right"; }' is not assignable to type 'Readonly<OcticonProps>'.
+    Types of property 'name' are incompatible.
+      Type '"allow-right"' is not assignable to type 'OcticonSymbol'.
+```
+
 ## License
 
 [Distributed under the MIT License](LICENSE.txt).

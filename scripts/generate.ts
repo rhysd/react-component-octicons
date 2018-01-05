@@ -21,7 +21,8 @@ interface Octicon {
 const elems = [];
 
 const octicons = require('octicons');
-for (const name of Object.getOwnPropertyNames(octicons)) {
+const symbols = Object.getOwnPropertyNames(octicons);
+for (const name of symbols) {
     const o: Octicon = octicons[name];
     if (o.symbol !== name) {
         continue;
@@ -35,9 +36,12 @@ for (const name of Object.getOwnPropertyNames(octicons)) {
 }
 
 const template = fs.readFileSync(path.join(__dirname, 'template.ts'), 'utf8');
-const constant = `const OCTICON_SVGS: {[name: string]: JSX.Element} = {
+const constant = `const OCTICON_SVGS: {[T in OcticonSymbol]: JSX.Element} = {
 ${elems.join('\n')}
 };
+
+export type OcticonSymbol =
+  ${symbols.map(s => `'${s}'`).join(' |\n  ')};
 `;
 
 fs.writeFileSync('index.tsx', template + constant, 'utf8');
