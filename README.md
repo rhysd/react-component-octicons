@@ -1,5 +1,5 @@
-React Components for Octicons
-=============================
+React Component for Octicons
+============================
 [![Build Status](https://travis-ci.org/rhysd/react-component-octicons.svg?branch=master)](https://travis-ci.org/rhysd/react-component-octicons)
 
 [react-component-octicons][] is a [React][] component library for [Octicons][].
@@ -24,7 +24,7 @@ Symbol names are described in [Octicons document][Octicons].
 ```typescript
 import * as React from 'react';
 import { render } from 'react-dom';
-import Octicon from '../../index';
+import Octicon from 'react-component-octicons';
 
 render(
     <div>
@@ -42,7 +42,7 @@ render(
 ```typescript
 import * as React from 'react';
 import { render } from 'react-dom';
-import Octicon from '../../index';
+import Octicon from 'react-component-octicons';
 
 // ERROR! 'allow-right' is typo of 'arrow-right'
 render(
