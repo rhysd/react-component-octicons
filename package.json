@@ -1,0 +1,49 @@
+{
+  "name": "react-component-octicons",
+  "version": "0.0.1",
+  "description": "Zero-dependency React components for Octicons",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^8.5.6",
+    "@types/react": "^16.0.34",
+    "@types/react-dom": "^16.0.3",
+    "octicons": "^7.0.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "ts-node": "^4.1.0",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.2"
+  },
+  "scripts": {
+    "gen": "ts-node ./scripts/generate.ts",
+    "lint": "tslint index.tsx test/*.tsx",
+    "test-dts": "tsc --jsx react --noEmit test-dts/test.tsx index.d.ts",
+    "test": "tsc -p . && mocha test/*.js",
+    "preversion": "npm run lint && npm run test-dts && npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rhysd/react-component-bytesize-icons.git"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "icon",
+    "bytesize icon"
+  ],
+  "author": "rhysd <lin90162@yahoo.co.jp>",
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "index.js.map",
+    "index.tsx",
+    "index.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "bugs": {
+    "url": "https://github.com/rhysd/react-component-bytesize-icon/issues"
+  },
+  "homepage": "https://github.com/rhysd/react-component-bytesize-icon#readme"
+}
