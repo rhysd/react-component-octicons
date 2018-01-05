@@ -28,7 +28,7 @@ for (const name of Object.getOwnPropertyNames(octicons)) {
     }
     const svg = `<svg id="octicon-${o.symbol}" viewBox="${o.options.viewBox}" width="${o.width}" height="${
         o.height
-    }" stroke="currentcolor">
+    }" stroke="currentcolor" fill="currentcolor">
     ${o.path}
   </svg>`;
     elems.push(`  "${o.symbol}": ${svg},`);

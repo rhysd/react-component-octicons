@@ -5,7 +5,9 @@ import Octicon from '../../index';
 render(
     <div>
         <Octicon name="alert" />
-        <Octicon name="star" />
+        <div className="blue">
+            <Octicon name="star" />
+        </div>
     </div>,
     document.getElementById('root'),
 );
