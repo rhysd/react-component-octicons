@@ -32,7 +32,7 @@ for (const name of symbols) {
     }" stroke="currentcolor" fill="currentcolor">
     ${o.path}
   </svg>`;
-    elems.push(`  "${o.symbol}": ${svg},`);
+    elems.push(`  '${o.symbol}': ${svg},`);
 }
 
 const template = fs.readFileSync(path.join(__dirname, 'template.ts'), 'utf8');
