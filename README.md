@@ -3,7 +3,7 @@ React Component for Octicons
 [![Build Status](https://travis-ci.org/rhysd/react-component-octicons.svg?branch=master)](https://travis-ci.org/rhysd/react-component-octicons)
 
 [react-component-octicons][] is a [React][] component library for [Octicons][].
-This library wraps SVG icons and provides one React component `<Octicon>`.
+This library wraps SVG icons and provides one React component `<Octicon/>`.
 
 This library is ready for [TypeScript][].
 
@@ -18,7 +18,7 @@ $ npm install --save react-component-octicons
 
 ## Usage
 
-`<Octiocon>` component has one required property `name`. `name` is a symbol name for an icon.
+`<Octicon/>` component has one required property `name`. `name` is a symbol name for an icon.
 Symbol names are described in [Octicons document][Octicons].
 
 ```typescript
@@ -37,13 +37,9 @@ render(
 
 ## Typo Safety for Icon Names
 
-`name` property of `<Octicon>` is stricted to actual symbol names. For example, following code contains typo `allow-right` (`arrow-right` is correct).
+`name` property of `<Octicon/>` is restricted to actual symbol names. For example, following code contains typo `allow-right` (`arrow-right` is correct).
 
 ```typescript
-import * as React from 'react';
-import { render } from 'react-dom';
-import Octicon from 'react-component-octicons';
-
 // ERROR! 'allow-right' is typo of 'arrow-right'
 render(
     <Octicon name="allow-right" />,
