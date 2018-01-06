@@ -27,7 +27,7 @@ for (const name of symbols) {
     if (o.symbol !== name) {
         continue;
     }
-    const svg = `<svg id="octicon-${o.symbol}" viewBox="${o.options.viewBox}" width="${o.width}" height="${
+    const svg = `<svg viewBox="${o.options.viewBox}" width="${o.width}" height="${
         o.height
     }" stroke="currentcolor" fill="currentcolor">
     ${o.path}
