@@ -16,6 +16,8 @@
     "jsx": "react"
   },
   "files": [
-    "index.tsx"
+    "index.tsx",
+    "test/smoke/test.tsx",
+    "test/unit/octicon.tsx"
   ]
 }

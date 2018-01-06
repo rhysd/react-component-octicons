@@ -5,10 +5,15 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "@types/enzyme": "^3.1.6",
+    "@types/mocha": "^2.2.46",
     "@types/node": "^8.5.6",
     "@types/react": "^16.0.34",
     "@types/react-dom": "^16.0.3",
     "browserify": "^15.0.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "mocha": "^4.1.0",
     "octicons": "^7.0.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -19,10 +24,12 @@
   "scripts": {
     "gen": "ts-node ./scripts/generate.ts",
     "tsc": "tsc --pretty -p . && tsc --pretty -p . -d",
+    "watch": "tsc --pretty -p . --watch",
     "build": "npm run gen && npm run tsc",
-    "build-smoke-test": "tsc --pretty -p ./test/smoke && browserify -d ./test/smoke/test.js -o ./test/smoke/bundle.js",
+    "bundle-smoke-test": "npm run build && browserify -d ./test/smoke/test.js -o ./test/smoke/bundle.js",
     "test-dts": "tsc --jsx react --noEmit test/dts/test.tsx index.d.ts",
-    "test": "npm run build-smoke-test && npm run test-dts",
+    "test-unit": "mocha test/unit/octicon.js",
+    "test": "npm run build && npm run test-dts && npm run test-unit",
     "preversion": "npm run test"
   },
   "repository": {
