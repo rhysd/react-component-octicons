@@ -27,10 +27,10 @@ for (const name of symbols) {
     if (o.symbol !== name) {
         continue;
     }
-    const svg = `<svg style={{display: 'inline-block', verticalAlign: 'text-top'}} viewBox="${o.options.viewBox}" width="${
-        o.width
-    }" height="${o.height}" stroke="currentcolor" fill="currentcolor">
-    ${o.path}
+    const svg = `<svg style={{display: 'inline-block', verticalAlign: 'text-top'}} viewBox="${
+        o.options.viewBox
+    }" width="${o.width}" height="${o.height}" stroke="currentcolor" fill="currentcolor">
+    ${o.path.replace('fill-rule', 'fillRule')}
   </svg>`;
     elems.push(`  '${o.symbol}': ${svg},`);
 }
