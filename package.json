@@ -53,7 +53,7 @@
     "index.tsx",
     "index.d.ts",
     "README.md",
-    "LICENSE"
+    "LICENSE.txt"
   ],
   "bugs": {
     "url": "https://github.com/rhysd/react-component-octicons/issues"
