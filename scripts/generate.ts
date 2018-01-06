@@ -29,7 +29,7 @@ for (const name of symbols) {
     }
     const svg = `<svg style={{display: 'inline-block', verticalAlign: 'text-top'}} viewBox="${
         o.options.viewBox
-    }" width="${o.width}" height="${o.height}" stroke="currentcolor" fill="currentcolor">
+    }" width="${o.width}" height="${o.height}" fill="currentcolor">
     ${o.path.replace('fill-rule', 'fillRule')}
   </svg>`;
     elems.push(`  '${o.symbol}': ${svg},`);
