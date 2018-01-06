@@ -15,7 +15,7 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "mocha": "^4.1.0",
-    "octicons": "^7.0.1",
+    "octicons": "^7.1.0",
     "prettier": "^1.9.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

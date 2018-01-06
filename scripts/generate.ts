@@ -27,9 +27,9 @@ for (const name of symbols) {
     if (o.symbol !== name) {
         continue;
     }
-    const svg = `<svg viewBox="${o.options.viewBox}" width="${o.width}" height="${
-        o.height
-    }" stroke="currentcolor" fill="currentcolor">
+    const svg = `<svg style={{display: 'inline-block', verticalAlign: 'text-top'}} viewBox="${o.options.viewBox}" width="${
+        o.width
+    }" height="${o.height}" stroke="currentcolor" fill="currentcolor">
     ${o.path}
   </svg>`;
     elems.push(`  '${o.symbol}': ${svg},`);
