@@ -14,7 +14,7 @@ export default class Octicon extends React.PureComponent<OcticonProps> {
         let width, height;
         if (size) {
             if (size[0] === 'x') {
-                const zoom = parseInt(size.slice(1), 10);
+                const zoom = parseFloat(size.slice(1));
                 width = (icon.width * zoom) | 0;
                 height = (icon.height * zoom) | 0;
             } else {
