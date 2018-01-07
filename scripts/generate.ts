@@ -33,13 +33,10 @@ for (const name of symbols) {
     version: ${attr.version},
     width: ${attr.width},
     height: ${attr.height},
+    viewBox: '${attr.viewBox}',
     aria: ${attr['aria-hidden']},
     path: ${o.path.replace('fill-rule', 'fillRule')},
   }`;
-
-    if (attr.viewBox !== `0 0 ${attr.width} ${attr.height}`) {
-        console.warn(`Unexpected viewBox for icon '${o.symbol}': '${attr.viewBox}'`, o);
-    }
 
     elems.push(`  '${o.symbol}': ${icon},`);
 }

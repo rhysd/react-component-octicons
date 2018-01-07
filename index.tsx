@@ -2,21 +2,35 @@ import * as React from 'react';
 
 export interface OcticonProps {
     name: OcticonSymbol;
+    size?: string;
 }
 
 export default class Octicon extends React.PureComponent<OcticonProps> {
     render() {
-        const icon: IconInfo = OCTICONS[this.props.name];
+        const { name, size } = this.props;
+        const icon: IconInfo = OCTICONS[name];
         const style = { display: 'inline-block', verticalAlign: 'text-top' };
-        const width = icon.width;
-        const height = icon.height;
-        const viewBox = `0 0 ${width} ${height}`;
+
+        let width, height;
+        if (size) {
+            if (size[0] === 'x') {
+                const zoom = parseInt(size.slice(1), 10);
+                width = (icon.width * zoom) | 0;
+                height = (icon.height * zoom) | 0;
+            } else {
+                width = height = size;
+            }
+        } else {
+            width = icon.width;
+            height = icon.height;
+        }
+
         return (
             <svg
                 style={style}
                 width={width}
                 height={height}
-                viewBox={viewBox}
+                viewBox={icon.viewBox}
                 fill="currentColor"
                 aria-hidden={icon.aria}
             >
@@ -30,6 +44,7 @@ interface IconInfo {
     version: number;
     width: number;
     height: number;
+    viewBox: string;
     aria: boolean;
     path: JSX.Element;
 }
@@ -38,6 +53,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -50,6 +66,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 10,
         height: 16,
+        viewBox: '0 0 10 16',
         aria: true,
         path: <path fillRule="evenodd" d="M7 7V3H3v4H0l5 6 5-6z" />,
     },
@@ -57,6 +74,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 10,
         height: 16,
+        viewBox: '0 0 10 16',
         aria: true,
         path: <path fillRule="evenodd" d="M6 3L0 8l6 5v-3h4V6H6z" />,
     },
@@ -64,6 +82,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 10,
         height: 16,
+        viewBox: '0 0 10 16',
         aria: true,
         path: <path fillRule="evenodd" d="M10 8L4 3v3H0v4h4v3z" />,
     },
@@ -71,6 +90,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 6,
         height: 16,
+        viewBox: '0 0 6 16',
         aria: true,
         path: <path fillRule="evenodd" d="M4 7V5H2v2H0l3 4 3-4z" />,
     },
@@ -78,6 +98,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 6,
         height: 16,
+        viewBox: '0 0 6 16',
         aria: true,
         path: <path fillRule="evenodd" d="M4 7V5L0 8l4 3V9h2V7z" />,
     },
@@ -85,6 +106,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 6,
         height: 16,
+        viewBox: '0 0 6 16',
         aria: true,
         path: <path fillRule="evenodd" d="M6 8L2 5v2H0v2h2v2z" />,
     },
@@ -92,6 +114,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 6,
         height: 16,
+        viewBox: '0 0 6 16',
         aria: true,
         path: <path fillRule="evenodd" d="M3 5L0 9h2v2h2V9h2z" />,
     },
@@ -99,6 +122,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 10,
         height: 16,
+        viewBox: '0 0 10 16',
         aria: true,
         path: <path fillRule="evenodd" d="M5 3L0 9h3v4h4V9h3z" />,
     },
@@ -106,6 +130,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -118,6 +143,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -130,6 +156,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 10,
         height: 16,
+        viewBox: '0 0 10 16',
         aria: true,
         path: (
             <path
@@ -142,6 +169,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -154,6 +182,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 10,
         height: 16,
+        viewBox: '0 0 10 16',
         aria: true,
         path: (
             <path
@@ -166,6 +195,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -178,6 +208,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -190,6 +221,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -202,6 +234,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -214,6 +247,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -226,6 +260,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: <path fillRule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z" />,
     },
@@ -233,6 +268,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -245,6 +281,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 10,
         height: 16,
+        viewBox: '0 0 10 16',
         aria: true,
         path: <path fillRule="evenodd" d="M5 11L0 6l1.5-1.5L5 8.25 8.5 4.5 10 6z" />,
     },
@@ -252,6 +289,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 8,
         height: 16,
+        viewBox: '0 0 8 16',
         aria: true,
         path: <path fillRule="evenodd" d="M5.5 3L7 4.5 3.25 8 7 11.5 5.5 13l-5-5z" />,
     },
@@ -259,6 +297,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 8,
         height: 16,
+        viewBox: '0 0 8 16',
         aria: true,
         path: <path fillRule="evenodd" d="M7.5 8l-5 5L1 11.5 4.75 8 1 4.5 2.5 3z" />,
     },
@@ -266,6 +305,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 10,
         height: 16,
+        viewBox: '0 0 10 16',
         aria: true,
         path: <path fillRule="evenodd" d="M10 10l-1.5 1.5L5 7.75 1.5 11.5 0 10l5-5z" />,
     },
@@ -273,6 +313,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -285,6 +326,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -297,6 +339,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -309,6 +352,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -321,6 +365,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -333,6 +378,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -345,6 +391,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -357,6 +404,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -369,6 +417,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -381,6 +430,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -393,6 +443,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 8,
         height: 16,
+        viewBox: '0 0 8 16',
         aria: true,
         path: <path fillRule="evenodd" d="M0 7v2h8V7z" />,
     },
@@ -400,6 +451,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -412,6 +464,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: (
             <path
@@ -424,6 +477,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -436,6 +490,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -448,6 +503,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -460,6 +516,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -472,6 +529,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 10,
         height: 16,
+        viewBox: '0 0 10 16',
         aria: true,
         path: (
             <path
@@ -484,6 +542,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 13,
         height: 16,
+        viewBox: '0 0 13 16',
         aria: true,
         path: (
             <path
@@ -496,6 +555,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -508,6 +568,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -520,6 +581,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -532,6 +594,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -544,6 +607,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -556,6 +620,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: (
             <path
@@ -568,6 +633,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -580,6 +646,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: (
             <path
@@ -592,6 +659,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: (
             <path
@@ -604,6 +672,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: (
             <path
@@ -616,6 +685,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -628,6 +698,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: (
             <path
@@ -640,6 +711,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: (
             <path
@@ -652,6 +724,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -664,6 +737,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -676,6 +750,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: (
             <path
@@ -688,6 +763,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: (
             <path
@@ -700,6 +776,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: (
             <path
@@ -712,6 +789,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -724,6 +802,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -736,6 +815,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -748,6 +828,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: (
             <path
@@ -760,6 +841,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -772,6 +854,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 10,
         height: 16,
+        viewBox: '0 0 10 16',
         aria: true,
         path: (
             <path
@@ -784,6 +867,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -796,6 +880,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -808,6 +893,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: (
             <path
@@ -820,6 +906,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: (
             <path
@@ -832,6 +919,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -844,6 +932,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 8,
         height: 16,
+        viewBox: '0 0 8 16',
         aria: true,
         path: <path fillRule="evenodd" d="M8 4v1H0V4h8zM0 8h8V7H0v1zm0 3h8v-1H0v1z" />,
     },
@@ -851,6 +940,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: <path fillRule="evenodd" d="M16 14v1H0V0h1v14h15zM5 13H3V8h2v5zm4 0H7V3h2v10zm4 0h-2V6h2v7z" />,
     },
@@ -858,6 +948,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: (
             <path
@@ -870,6 +961,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -882,6 +974,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -894,6 +987,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 10,
         height: 16,
+        viewBox: '0 0 10 16',
         aria: true,
         path: (
             <path
@@ -906,6 +1000,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -918,6 +1013,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -930,6 +1026,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -942,6 +1039,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -954,6 +1052,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -966,6 +1065,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -978,6 +1078,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 6,
         height: 16,
+        viewBox: '0 0 6 16',
         aria: true,
         path: (
             <path
@@ -990,6 +1091,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -1002,6 +1104,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 13,
         height: 16,
+        viewBox: '0 0 13 16',
         aria: true,
         path: (
             <path
@@ -1014,6 +1117,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 3,
         height: 16,
+        viewBox: '0 0 3 16',
         aria: true,
         path: (
             <path
@@ -1026,6 +1130,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -1038,6 +1143,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -1050,6 +1156,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -1062,6 +1169,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: (
             <path
@@ -1074,6 +1182,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -1086,6 +1195,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: (
             <path
@@ -1098,6 +1208,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: (
             <path
@@ -1110,6 +1221,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: (
             <path
@@ -1122,6 +1234,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: (
             <path
@@ -1134,6 +1247,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: (
             <path
@@ -1146,6 +1260,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 25,
         height: 16,
+        viewBox: '0 0 25 16',
         aria: true,
         path: (
             <path
@@ -1158,6 +1273,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 45,
         height: 16,
+        viewBox: '0 0 45 16',
         aria: true,
         path: (
             <path
@@ -1170,6 +1286,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -1182,6 +1299,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -1194,6 +1312,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -1206,6 +1325,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -1218,6 +1338,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -1230,6 +1351,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -1242,6 +1364,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -1254,6 +1377,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -1266,6 +1390,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -1278,6 +1403,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -1290,6 +1416,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -1302,6 +1429,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -1314,6 +1442,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -1326,6 +1455,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -1338,6 +1468,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -1350,6 +1481,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: (
             <path
@@ -1362,6 +1494,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -1374,6 +1507,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: (
             <path
@@ -1386,6 +1520,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -1398,6 +1533,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -1410,6 +1546,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: <path fillRule="evenodd" d="M12 9H7v5H5V9H0V7h5V2h2v5h5z" />,
     },
@@ -1417,6 +1554,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 7,
         height: 16,
+        viewBox: '0 0 7 16',
         aria: true,
         path: <path fillRule="evenodd" d="M4 7V4H3v3H0v1h3v3h1V8h3V7H4z" />,
     },
@@ -1424,6 +1562,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 8,
         height: 16,
+        viewBox: '0 0 8 16',
         aria: true,
         path: <path fillRule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z" />,
     },
@@ -1431,6 +1570,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 8,
         height: 16,
+        viewBox: '0 0 8 16',
         aria: true,
         path: <path fillRule="evenodd" d="M8 12H0V4h8z" />,
     },
@@ -1438,6 +1578,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 15,
         height: 16,
+        viewBox: '0 0 15 16',
         aria: true,
         path: (
             <path
@@ -1450,6 +1591,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -1462,6 +1604,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -1474,6 +1617,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -1486,6 +1630,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -1498,6 +1643,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: <path fillRule="evenodd" d="M6 3.5c3.92.44 8 3.125 8 10-2.312-5.062-4.75-6-8-6V11L.5 5.5 6 0v3.5z" />,
     },
@@ -1505,6 +1651,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: (
             <path
@@ -1517,6 +1664,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -1529,6 +1677,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: (
             <path
@@ -1541,6 +1690,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 10,
         height: 16,
+        viewBox: '0 0 10 16',
         aria: true,
         path: (
             <path
@@ -1553,6 +1703,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -1565,6 +1716,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: (
             <path
@@ -1577,6 +1729,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -1589,6 +1742,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -1601,6 +1755,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 10,
         height: 16,
+        viewBox: '0 0 10 16',
         aria: true,
         path: (
             <path
@@ -1613,6 +1768,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -1625,6 +1781,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -1637,6 +1794,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -1649,6 +1807,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -1661,6 +1820,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: (
             <path
@@ -1673,6 +1833,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -1685,6 +1846,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -1697,6 +1859,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -1709,6 +1872,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -1721,6 +1885,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -1733,6 +1898,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -1745,6 +1911,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path fillRule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74z" />
@@ -1754,6 +1921,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -1766,6 +1934,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: (
             <path
@@ -1778,6 +1947,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -1790,6 +1960,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -1802,6 +1973,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -1814,6 +1986,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -1826,6 +1999,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 18,
         height: 16,
+        viewBox: '0 0 18 16',
         aria: true,
         path: (
             <path
@@ -1838,6 +2012,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: (
             <path
@@ -1850,6 +2025,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -1862,6 +2038,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -1874,6 +2051,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -1886,6 +2064,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: (
             <path
@@ -1898,6 +2077,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: <path fillRule="evenodd" d="M0 5l6 6 6-6z" />,
     },
@@ -1905,6 +2085,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 6,
         height: 16,
+        viewBox: '0 0 6 16',
         aria: true,
         path: <path fillRule="evenodd" d="M6 2L0 8l6 6z" />,
     },
@@ -1912,6 +2093,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 6,
         height: 16,
+        viewBox: '0 0 6 16',
         aria: true,
         path: <path fillRule="evenodd" d="M0 14l6-6-6-6z" />,
     },
@@ -1919,6 +2101,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: <path fillRule="evenodd" d="M12 11L6 5l-6 6z" />,
     },
@@ -1926,6 +2109,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -1938,6 +2122,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -1950,6 +2135,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -1962,6 +2148,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 16,
         height: 16,
+        viewBox: '0 0 16 16',
         aria: true,
         path: (
             <path
@@ -1974,6 +2161,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 14,
         height: 16,
+        viewBox: '0 0 14 16',
         aria: true,
         path: (
             <path
@@ -1986,6 +2174,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: (
             <path
@@ -1998,6 +2187,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 12,
         height: 16,
+        viewBox: '0 0 12 16',
         aria: true,
         path: (
             <path
@@ -2010,6 +2200,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         version: 1.1,
         width: 10,
         height: 16,
+        viewBox: '0 0 10 16',
         aria: true,
         path: <path fillRule="evenodd" d="M10 7H6l3-7-9 9h4l-3 7z" />,
     },
