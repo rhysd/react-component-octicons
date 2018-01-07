@@ -3,23 +3,21 @@ import { render } from 'react-dom';
 import Octicon from '../../index';
 
 render(
-    <div>
-        Normal: <Octicon name="alert" />
+    <main>
+        <h3>Normal</h3>
+        <Octicon name="alert" />
+        <h3>Color</h3>
         <div className="red">
-            Color: <Octicon name="star" />
+            <Octicon name="star" />
         </div>
-        <div>
-            Large: <Octicon name="flame" size="x2" />
+        <h3>Large</h3>
+        <Octicon name="flame" size="x2" />
+        <h3>Mega</h3>
+        <Octicon name="octoface" size="x4" />
+        <h3>Custom: Super Mega</h3>
+        <div className="super-mega">
+            <Octicon name="mark-github" size="100%" />
         </div>
-        <div>
-            Mega: <Octicon name="octoface" size="x4" />
-        </div>
-        <div>
-            Custom:
-            <div className="super-mega">
-                <Octicon name="mark-github" size="100%" />
-            </div>
-        </div>
-    </div>,
+    </main>,
     document.getElementById('root'),
 );
