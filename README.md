@@ -2,6 +2,7 @@ React Component for Octicons
 ============================
 [![Build Status](https://travis-ci.org/rhysd/react-component-octicons.svg?branch=master)](https://travis-ci.org/rhysd/react-component-octicons)
 [![NPM Version](https://badge.fury.io/js/react-component-octicons.svg)](https://www.npmjs.com/package/react-component-octicons)
+[![codecov](https://codecov.io/gh/rhysd/react-component-octicons/branch/master/graph/badge.svg)](https://codecov.io/gh/rhysd/react-component-octicons)
 
 [react-component-octicons][] is a [React][] component library for the latest [Octicons][] (v7.x).
 This library wraps SVG icons and provides one React component `<Octicon/>`.
