@@ -30,7 +30,7 @@ for (const name of symbols) {
 
     const attr = o.options;
     const icon = `{
-    version: ${attr.version},
+    version: '${attr.version}',
     width: ${attr.width},
     height: ${attr.height},
     viewBox: '${attr.viewBox}',

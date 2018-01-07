@@ -19,6 +19,7 @@ describe('<Octicon>', function() {
                 const props = svg.first().props();
                 assert.ok(props.width);
                 assert.ok(props.height);
+                assert.ok(props.version);
                 assert.equal(props.viewBox, `0 0 ${props.width} ${props.height}`);
             });
 

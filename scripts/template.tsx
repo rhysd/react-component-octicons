@@ -33,6 +33,7 @@ export default class Octicon extends React.PureComponent<OcticonProps> {
                 viewBox={icon.viewBox}
                 fill="currentColor"
                 aria-hidden={icon.aria}
+                version={icon.version}
             >
                 {icon.path}
             </svg>
@@ -41,7 +42,7 @@ export default class Octicon extends React.PureComponent<OcticonProps> {
 }
 
 interface IconInfo {
-    version: number;
+    version: string;
     width: number;
     height: number;
     viewBox: string;

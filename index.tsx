@@ -33,6 +33,7 @@ export default class Octicon extends React.PureComponent<OcticonProps> {
                 viewBox={icon.viewBox}
                 fill="currentColor"
                 aria-hidden={icon.aria}
+                version={icon.version}
             >
                 {icon.path}
             </svg>
@@ -41,7 +42,7 @@ export default class Octicon extends React.PureComponent<OcticonProps> {
 }
 
 interface IconInfo {
-    version: number;
+    version: string;
     width: number;
     height: number;
     viewBox: string;
@@ -50,7 +51,7 @@ interface IconInfo {
 }
 const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
     alert: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -63,7 +64,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'arrow-down': {
-        version: 1.1,
+        version: '1.1',
         width: 10,
         height: 16,
         viewBox: '0 0 10 16',
@@ -71,7 +72,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         path: <path fillRule="evenodd" d="M7 7V3H3v4H0l5 6 5-6z" />,
     },
     'arrow-left': {
-        version: 1.1,
+        version: '1.1',
         width: 10,
         height: 16,
         viewBox: '0 0 10 16',
@@ -79,7 +80,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         path: <path fillRule="evenodd" d="M6 3L0 8l6 5v-3h4V6H6z" />,
     },
     'arrow-right': {
-        version: 1.1,
+        version: '1.1',
         width: 10,
         height: 16,
         viewBox: '0 0 10 16',
@@ -87,7 +88,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         path: <path fillRule="evenodd" d="M10 8L4 3v3H0v4h4v3z" />,
     },
     'arrow-small-down': {
-        version: 1.1,
+        version: '1.1',
         width: 6,
         height: 16,
         viewBox: '0 0 6 16',
@@ -95,7 +96,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         path: <path fillRule="evenodd" d="M4 7V5H2v2H0l3 4 3-4z" />,
     },
     'arrow-small-left': {
-        version: 1.1,
+        version: '1.1',
         width: 6,
         height: 16,
         viewBox: '0 0 6 16',
@@ -103,7 +104,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         path: <path fillRule="evenodd" d="M4 7V5L0 8l4 3V9h2V7z" />,
     },
     'arrow-small-right': {
-        version: 1.1,
+        version: '1.1',
         width: 6,
         height: 16,
         viewBox: '0 0 6 16',
@@ -111,7 +112,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         path: <path fillRule="evenodd" d="M6 8L2 5v2H0v2h2v2z" />,
     },
     'arrow-small-up': {
-        version: 1.1,
+        version: '1.1',
         width: 6,
         height: 16,
         viewBox: '0 0 6 16',
@@ -119,7 +120,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         path: <path fillRule="evenodd" d="M3 5L0 9h2v2h2V9h2z" />,
     },
     'arrow-up': {
-        version: 1.1,
+        version: '1.1',
         width: 10,
         height: 16,
         viewBox: '0 0 10 16',
@@ -127,7 +128,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         path: <path fillRule="evenodd" d="M5 3L0 9h3v4h4V9h3z" />,
     },
     beaker: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -140,7 +141,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     bell: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -153,7 +154,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     bold: {
-        version: 1.1,
+        version: '1.1',
         width: 10,
         height: 16,
         viewBox: '0 0 10 16',
@@ -166,7 +167,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     book: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -179,7 +180,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     bookmark: {
-        version: 1.1,
+        version: '1.1',
         width: 10,
         height: 16,
         viewBox: '0 0 10 16',
@@ -192,7 +193,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     briefcase: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -205,7 +206,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     broadcast: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -218,7 +219,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     browser: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -231,7 +232,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     bug: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -244,7 +245,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     calendar: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -257,7 +258,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     check: {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -265,7 +266,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         path: <path fillRule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z" />,
     },
     checklist: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -278,7 +279,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'chevron-down': {
-        version: 1.1,
+        version: '1.1',
         width: 10,
         height: 16,
         viewBox: '0 0 10 16',
@@ -286,7 +287,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         path: <path fillRule="evenodd" d="M5 11L0 6l1.5-1.5L5 8.25 8.5 4.5 10 6z" />,
     },
     'chevron-left': {
-        version: 1.1,
+        version: '1.1',
         width: 8,
         height: 16,
         viewBox: '0 0 8 16',
@@ -294,7 +295,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         path: <path fillRule="evenodd" d="M5.5 3L7 4.5 3.25 8 7 11.5 5.5 13l-5-5z" />,
     },
     'chevron-right': {
-        version: 1.1,
+        version: '1.1',
         width: 8,
         height: 16,
         viewBox: '0 0 8 16',
@@ -302,7 +303,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         path: <path fillRule="evenodd" d="M7.5 8l-5 5L1 11.5 4.75 8 1 4.5 2.5 3z" />,
     },
     'chevron-up': {
-        version: 1.1,
+        version: '1.1',
         width: 10,
         height: 16,
         viewBox: '0 0 10 16',
@@ -310,7 +311,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         path: <path fillRule="evenodd" d="M10 10l-1.5 1.5L5 7.75 1.5 11.5 0 10l5-5z" />,
     },
     'circle-slash': {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -323,7 +324,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'circuit-board': {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -336,7 +337,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     clippy: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -349,7 +350,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     clock: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -362,7 +363,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'cloud-download': {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -375,7 +376,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'cloud-upload': {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -388,7 +389,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     code: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -401,7 +402,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     comment: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -414,7 +415,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'comment-discussion': {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -427,7 +428,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'credit-card': {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -440,7 +441,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     dash: {
-        version: 1.1,
+        version: '1.1',
         width: 8,
         height: 16,
         viewBox: '0 0 8 16',
@@ -448,7 +449,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         path: <path fillRule="evenodd" d="M0 7v2h8V7z" />,
     },
     dashboard: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -461,7 +462,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     database: {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -474,7 +475,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'desktop-download': {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -487,7 +488,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'device-camera': {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -500,7 +501,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'device-camera-video': {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -513,7 +514,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'device-desktop': {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -526,7 +527,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'device-mobile': {
-        version: 1.1,
+        version: '1.1',
         width: 10,
         height: 16,
         viewBox: '0 0 10 16',
@@ -539,7 +540,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     diff: {
-        version: 1.1,
+        version: '1.1',
         width: 13,
         height: 16,
         viewBox: '0 0 13 16',
@@ -552,7 +553,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'diff-added': {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -565,7 +566,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'diff-ignored': {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -578,7 +579,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'diff-modified': {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -591,7 +592,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'diff-removed': {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -604,7 +605,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'diff-renamed': {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -617,7 +618,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     ellipsis: {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -630,7 +631,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     eye: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -643,7 +644,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     file: {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -656,7 +657,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'file-binary': {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -669,7 +670,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'file-code': {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -682,7 +683,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'file-directory': {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -695,7 +696,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'file-media': {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -708,7 +709,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'file-pdf': {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -721,7 +722,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'file-submodule': {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -734,7 +735,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'file-symlink-directory': {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -747,7 +748,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'file-symlink-file': {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -760,7 +761,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'file-zip': {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -773,7 +774,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     flame: {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -786,7 +787,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     fold: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -799,7 +800,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     gear: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -812,7 +813,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     gift: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -825,7 +826,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     gist: {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -838,7 +839,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'gist-secret': {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -851,7 +852,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'git-branch': {
-        version: 1.1,
+        version: '1.1',
         width: 10,
         height: 16,
         viewBox: '0 0 10 16',
@@ -864,7 +865,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'git-commit': {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -877,7 +878,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'git-compare': {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -890,7 +891,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'git-merge': {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -903,7 +904,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'git-pull-request': {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -916,7 +917,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     globe: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -929,7 +930,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     grabber: {
-        version: 1.1,
+        version: '1.1',
         width: 8,
         height: 16,
         viewBox: '0 0 8 16',
@@ -937,7 +938,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         path: <path fillRule="evenodd" d="M8 4v1H0V4h8zM0 8h8V7H0v1zm0 3h8v-1H0v1z" />,
     },
     graph: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -945,7 +946,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         path: <path fillRule="evenodd" d="M16 14v1H0V0h1v14h15zM5 13H3V8h2v5zm4 0H7V3h2v10zm4 0h-2V6h2v7z" />,
     },
     heart: {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -958,7 +959,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     history: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -971,7 +972,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     home: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -984,7 +985,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'horizontal-rule': {
-        version: 1.1,
+        version: '1.1',
         width: 10,
         height: 16,
         viewBox: '0 0 10 16',
@@ -997,7 +998,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     hubot: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -1010,7 +1011,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     inbox: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -1023,7 +1024,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     info: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -1036,7 +1037,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'issue-closed': {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -1049,7 +1050,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'issue-opened': {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -1062,7 +1063,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'issue-reopened': {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -1075,7 +1076,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     italic: {
-        version: 1.1,
+        version: '1.1',
         width: 6,
         height: 16,
         viewBox: '0 0 6 16',
@@ -1088,7 +1089,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     jersey: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -1101,7 +1102,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'kebab-horizontal': {
-        version: 1.1,
+        version: '1.1',
         width: 13,
         height: 16,
         viewBox: '0 0 13 16',
@@ -1114,7 +1115,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'kebab-vertical': {
-        version: 1.1,
+        version: '1.1',
         width: 3,
         height: 16,
         viewBox: '0 0 3 16',
@@ -1127,7 +1128,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     key: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -1140,7 +1141,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     keyboard: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -1153,7 +1154,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     law: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -1166,7 +1167,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'light-bulb': {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -1179,7 +1180,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     link: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -1192,7 +1193,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'link-external': {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -1205,7 +1206,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'list-ordered': {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -1218,7 +1219,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'list-unordered': {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -1231,7 +1232,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     location: {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -1244,7 +1245,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     lock: {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -1257,7 +1258,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'logo-gist': {
-        version: 1.1,
+        version: '1.1',
         width: 25,
         height: 16,
         viewBox: '0 0 25 16',
@@ -1270,7 +1271,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'logo-github': {
-        version: 1.1,
+        version: '1.1',
         width: 45,
         height: 16,
         viewBox: '0 0 45 16',
@@ -1283,7 +1284,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     mail: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -1296,7 +1297,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'mail-read': {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -1309,7 +1310,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'mark-github': {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -1322,7 +1323,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     markdown: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -1335,7 +1336,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     megaphone: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -1348,7 +1349,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     mention: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -1361,7 +1362,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     milestone: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -1374,7 +1375,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     mirror: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -1387,7 +1388,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'mortar-board': {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -1400,7 +1401,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     mute: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -1413,7 +1414,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'no-newline': {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -1426,7 +1427,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     note: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -1439,7 +1440,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     octoface: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -1452,7 +1453,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     organization: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -1465,7 +1466,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     package: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -1478,7 +1479,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     paintcan: {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -1491,7 +1492,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     pencil: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -1504,7 +1505,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     person: {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -1517,7 +1518,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     pin: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -1530,7 +1531,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     plug: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -1543,7 +1544,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     plus: {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -1551,7 +1552,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         path: <path fillRule="evenodd" d="M12 9H7v5H5V9H0V7h5V2h2v5h5z" />,
     },
     'plus-small': {
-        version: 1.1,
+        version: '1.1',
         width: 7,
         height: 16,
         viewBox: '0 0 7 16',
@@ -1559,7 +1560,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         path: <path fillRule="evenodd" d="M4 7V4H3v3H0v1h3v3h1V8h3V7H4z" />,
     },
     'primitive-dot': {
-        version: 1.1,
+        version: '1.1',
         width: 8,
         height: 16,
         viewBox: '0 0 8 16',
@@ -1567,7 +1568,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         path: <path fillRule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z" />,
     },
     'primitive-square': {
-        version: 1.1,
+        version: '1.1',
         width: 8,
         height: 16,
         viewBox: '0 0 8 16',
@@ -1575,7 +1576,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         path: <path fillRule="evenodd" d="M8 12H0V4h8z" />,
     },
     project: {
-        version: 1.1,
+        version: '1.1',
         width: 15,
         height: 16,
         viewBox: '0 0 15 16',
@@ -1588,7 +1589,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     pulse: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -1601,7 +1602,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     question: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -1614,7 +1615,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     quote: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -1627,7 +1628,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'radio-tower': {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -1640,7 +1641,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     reply: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -1648,7 +1649,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         path: <path fillRule="evenodd" d="M6 3.5c3.92.44 8 3.125 8 10-2.312-5.062-4.75-6-8-6V11L.5 5.5 6 0v3.5z" />,
     },
     repo: {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -1661,7 +1662,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'repo-clone': {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -1674,7 +1675,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'repo-force-push': {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -1687,7 +1688,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'repo-forked': {
-        version: 1.1,
+        version: '1.1',
         width: 10,
         height: 16,
         viewBox: '0 0 10 16',
@@ -1700,7 +1701,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'repo-pull': {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -1713,7 +1714,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'repo-push': {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -1726,7 +1727,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     report: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -1739,7 +1740,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     rocket: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -1752,7 +1753,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     rss: {
-        version: 1.1,
+        version: '1.1',
         width: 10,
         height: 16,
         viewBox: '0 0 10 16',
@@ -1765,7 +1766,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     ruby: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -1778,7 +1779,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'screen-full': {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -1791,7 +1792,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'screen-normal': {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -1804,7 +1805,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     search: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -1817,7 +1818,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     server: {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -1830,7 +1831,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     settings: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -1843,7 +1844,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     shield: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -1856,7 +1857,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'sign-in': {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -1869,7 +1870,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'sign-out': {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -1882,7 +1883,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     smiley: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -1895,7 +1896,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     squirrel: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -1908,7 +1909,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     star: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -1918,7 +1919,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     stop: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -1931,7 +1932,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     sync: {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -1944,7 +1945,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     tag: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -1957,7 +1958,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     tasklist: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -1970,7 +1971,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     telescope: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -1983,7 +1984,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     terminal: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -1996,7 +1997,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'text-size': {
-        version: 1.1,
+        version: '1.1',
         width: 18,
         height: 16,
         viewBox: '0 0 18 16',
@@ -2009,7 +2010,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'three-bars': {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -2022,7 +2023,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     thumbsdown: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -2035,7 +2036,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     thumbsup: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -2048,7 +2049,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     tools: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -2061,7 +2062,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     trashcan: {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -2074,7 +2075,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     'triangle-down': {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -2082,7 +2083,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         path: <path fillRule="evenodd" d="M0 5l6 6 6-6z" />,
     },
     'triangle-left': {
-        version: 1.1,
+        version: '1.1',
         width: 6,
         height: 16,
         viewBox: '0 0 6 16',
@@ -2090,7 +2091,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         path: <path fillRule="evenodd" d="M6 2L0 8l6 6z" />,
     },
     'triangle-right': {
-        version: 1.1,
+        version: '1.1',
         width: 6,
         height: 16,
         viewBox: '0 0 6 16',
@@ -2098,7 +2099,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         path: <path fillRule="evenodd" d="M0 14l6-6-6-6z" />,
     },
     'triangle-up': {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -2106,7 +2107,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         path: <path fillRule="evenodd" d="M12 11L6 5l-6 6z" />,
     },
     unfold: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -2119,7 +2120,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     unmute: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -2132,7 +2133,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     unverified: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -2145,7 +2146,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     verified: {
-        version: 1.1,
+        version: '1.1',
         width: 16,
         height: 16,
         viewBox: '0 0 16 16',
@@ -2158,7 +2159,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     versions: {
-        version: 1.1,
+        version: '1.1',
         width: 14,
         height: 16,
         viewBox: '0 0 14 16',
@@ -2171,7 +2172,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     watch: {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -2184,7 +2185,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     x: {
-        version: 1.1,
+        version: '1.1',
         width: 12,
         height: 16,
         viewBox: '0 0 12 16',
@@ -2197,7 +2198,7 @@ const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
         ),
     },
     zap: {
-        version: 1.1,
+        version: '1.1',
         width: 10,
         height: 16,
         viewBox: '0 0 10 16',
