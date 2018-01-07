@@ -14,7 +14,9 @@
     "browserify": "^15.0.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "istanbul": "^0.4.5",
     "mocha": "^4.1.0",
+    "nyc": "^11.4.1",
     "octicons": "^7.1.0",
     "prettier": "^1.9.2",
     "react": "^16.2.0",
@@ -31,7 +33,7 @@
     "build": "npm run gen && npm run tsc && npm run format",
     "bundle-smoke-test": "npm run build && browserify -d ./test/smoke/test.js -o ./test/smoke/bundle.js",
     "test-dts": "tsc --jsx react --noEmit test/dts/test.tsx index.d.ts",
-    "test-unit": "mocha test/unit/octicon.js",
+    "test-unit": "nyc mocha test/unit",
     "test": "npm run build && npm run test-dts && npm run test-unit",
     "preversion": "npm run test"
   },
