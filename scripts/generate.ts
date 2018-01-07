@@ -27,16 +27,25 @@ for (const name of symbols) {
     if (o.symbol !== name) {
         continue;
     }
-    const svg = `<svg style={{display: 'inline-block', verticalAlign: 'text-top'}} viewBox="${
-        o.options.viewBox
-    }" width="${o.width}" height="${o.height}" fill="currentcolor">
-    ${o.path.replace('fill-rule', 'fillRule')}
-  </svg>`;
-    elems.push(`  '${o.symbol}': ${svg},`);
+
+    const attr = o.options;
+    const icon = `{
+    version: ${attr.version},
+    width: ${attr.width},
+    height: ${attr.height},
+    aria: ${attr['aria-hidden']},
+    path: ${o.path.replace('fill-rule', 'fillRule')},
+  }`;
+
+    if (attr.viewBox !== `0 0 ${attr.width} ${attr.height}`) {
+        console.warn(`Unexpected viewBox for icon '${o.symbol}': '${attr.viewBox}'`, o);
+    }
+
+    elems.push(`  '${o.symbol}': ${icon},`);
 }
 
-const template = fs.readFileSync(path.join(__dirname, 'template.ts'), 'utf8');
-const constant = `const OCTICON_SVGS: {[T in OcticonSymbol]: JSX.Element} = {
+const template = fs.readFileSync(path.join(__dirname, 'template.tsx'), 'utf8');
+const constant = `const OCTICONS: {[T in OcticonSymbol]: IconInfo} = {
 ${elems.join('\n')}
 };
 
