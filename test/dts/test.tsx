@@ -7,10 +7,10 @@ render(
         // Normal size
         <Octicon name="alert" />
         // Twice bigger
-        <Octicon name="star" size="x2" />
+        <Octicon name="star" zoom="x2" />
         // Size 100px x 100px
         <div style={{ width: '100px', height: '100px' }}>
-            <Octicon name="flame" size="100%" />
+            <Octicon name="flame" zoom="100%" />
         </div>
     </main>,
     document.getElementById('root'),

@@ -2,23 +2,23 @@ import * as React from 'react';
 
 export interface OcticonProps {
     name: OcticonSymbol;
-    size?: string;
+    zoom?: string;
 }
 
 export default class Octicon extends React.PureComponent<OcticonProps> {
     render() {
-        const { name, size } = this.props;
+        const { name, zoom } = this.props;
         const icon: IconInfo = OCTICONS[name];
         const style = { display: 'inline-block', verticalAlign: 'text-top' };
 
         let width, height;
-        if (size) {
-            if (size[0] === 'x') {
-                const zoom = parseFloat(size.slice(1));
-                width = (icon.width * zoom) | 0;
-                height = (icon.height * zoom) | 0;
+        if (zoom) {
+            if (zoom[0] === 'x') {
+                const z = parseFloat(zoom.slice(1));
+                width = (icon.width * z) | 0;
+                height = (icon.height * z) | 0;
             } else {
-                width = height = size;
+                width = height = zoom;
             }
         } else {
             width = icon.width;

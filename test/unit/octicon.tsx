@@ -22,9 +22,9 @@ describe('<Octicon>', function() {
                 assert.equal(props.viewBox, `0 0 ${props.width} ${props.height}`);
             });
 
-            describe('"size" prop', function() {
+            describe('"zoom" prop', function() {
                 it('should specify the zoom factor of icon by integer', function() {
-                    const w = shallow(<Octicon name={symbol} size="x4" />);
+                    const w = shallow(<Octicon name={symbol} zoom="x4" />);
                     const props = w
                         .find('svg')
                         .first()
@@ -38,7 +38,7 @@ describe('<Octicon>', function() {
                 });
 
                 it('should specify the zoom factor of icon by float', function() {
-                    const w = shallow(<Octicon name={symbol} size="x1.5" />);
+                    const w = shallow(<Octicon name={symbol} zoom="x1.5" />);
                     const props = w
                         .find('svg')
                         .first()
@@ -52,7 +52,7 @@ describe('<Octicon>', function() {
                 });
 
                 it('should specify the zoom factor of icon by percent', function() {
-                    const w = shallow(<Octicon name={symbol} size="100%" />);
+                    const w = shallow(<Octicon name={symbol} zoom="100%" />);
                     const props = w
                         .find('svg')
                         .first()

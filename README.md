@@ -19,7 +19,7 @@ $ npm install --save react-component-octicons
 
 ## Usage
 
-`<Octicon/>` component has a required property `name` and an optional property `size`.
+`<Octicon/>` component has a required property `name` and an optional property `zoom`.
 
 ```typescript
 import * as React from 'react';
@@ -32,11 +32,11 @@ render(
         <Octicon name="alert" />
 
         // Twice bigger
-        <Octicon name="star" size="x2" />
+        <Octicon name="star" zoom="x2" />
 
         // Size 100px x 100px
         <div style={{width: '100px', height: '100px'}}>
-            <Octicon name="flame" size="100%" />
+            <Octicon name="flame" zoom="100%" />
         </div>
     </div>,
     document.getElementById('root'),
@@ -47,11 +47,11 @@ render(
 
 `name` is a symbol name for an icon. Symbol names are described in [Octicons document][Octicons].
 
-### `size` property
+### `zoom` property
 
-`size` is a string value and it represents size of the icon.
+`zoom` is a string value and it represents the zoom factor of the icon.
 
-- `x{N}`: `N` is number. Zoom the icon by xN (i.e. `x4` means 4 times bigger than normal).
+- `x{N}`: `N` is a number (integer or float). Zoom the icon by xN (i.e. `x4` means 4 times bigger than normal).
 - `N%`: `N` is a number between 0~100. It means N% size of its parent element. So `100%` means to fit to the parent element.
 
 ## Typo Safety for Icon Names
