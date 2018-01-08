@@ -20,7 +20,7 @@ $ npm install --save react-component-octicons
 
 ## Usage
 
-`<Octicon/>` component has a required property `name` and an optional property `zoom`.
+`<Octicon/>` component has a required property `name` and optional properties `zoom`, `style`.
 
 ```typescript
 import * as React from 'react';
@@ -39,6 +39,9 @@ render(
         <div style={{width: '100px', height: '100px'}}>
             <Octicon name="flame" zoom="100%" />
         </div>
+
+        // Styled icon
+        <Octicon name="flame" zoom="100%" style={{color: 'blue'}}/>
     </div>,
     document.getElementById('root'),
 );
@@ -54,6 +57,10 @@ render(
 
 - `x{N}`: `N` is a number (integer or float). Zoom the icon by xN (i.e. `x4` means 4 times bigger than normal).
 - `N%`: `N` is a number between 0~100. It means N% size of its parent element. So `100%` means to fit to the parent element.
+
+### `style` property
+
+`style` is a CSS property to specify the style of the icon itself. The styles are applied to underlying `<svg>` element.
 
 ## Typo Safety for Icon Names
 

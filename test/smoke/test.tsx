@@ -18,6 +18,8 @@ render(
         <div className="super-mega">
             <Octicon name="mark-github" zoom="100%" />
         </div>
+
+        <Octicon name="verified" zoom="x1.5" style={{color: 'green'}}/>
     </main>,
     document.getElementById('root'),
 );
