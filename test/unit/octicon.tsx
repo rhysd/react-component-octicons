@@ -64,6 +64,23 @@ describe('<Octicon>', function() {
                     assert.equal(height, '100%');
                 });
             });
+
+            describe('"style" prop', function() {
+                it('should set styles to underlying <svg> element', function() {
+                    const s = {
+                        color: 'blue', // new attribute
+                        display: 'flex', // overwrite attribute
+                    };
+                    const w = shallow(<Octicon name={symbol} zoom="x4" style={s} />);
+                    const style = w
+                        .find('svg')
+                        .first()
+                        .props().style;
+                    assert.ok(style);
+                    assert.equal(style!.color, 'blue');
+                    assert.equal(style!.display, 'flex');
+                });
+            });
         });
     }
 });

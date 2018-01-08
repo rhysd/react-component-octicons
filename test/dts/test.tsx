@@ -12,6 +12,8 @@ render(
         <div style={{ width: '100px', height: '100px' }}>
             <Octicon name="flame" zoom="100%" />
         </div>
+        // Style
+        <Octicon name="flame" zoom="100%" style={{ color: 'red' }} />
     </main>,
     document.getElementById('root'),
 );

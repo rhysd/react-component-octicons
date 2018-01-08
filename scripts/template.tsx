@@ -3,13 +3,19 @@ import * as React from 'react';
 export interface OcticonProps {
     name: OcticonSymbol;
     zoom?: string;
+    style?: React.CSSProperties;
 }
 
 export default class Octicon extends React.PureComponent<OcticonProps> {
     render() {
-        const { name, zoom } = this.props;
+        const { name, zoom, style } = this.props;
         const icon: IconInfo = OCTICONS[name];
-        const style = { display: 'inline-block', verticalAlign: 'text-top' };
+        const sty: React.CSSProperties = { display: 'inline-block', verticalAlign: 'text-top' };
+        if (style !== undefined) {
+            Object.keys(style).forEach(p => {
+                sty[p] = style[p];
+            });
+        }
 
         let width, height;
         if (zoom) {
@@ -27,7 +33,7 @@ export default class Octicon extends React.PureComponent<OcticonProps> {
 
         return (
             <svg
-                style={style}
+                style={sty}
                 width={width}
                 height={height}
                 viewBox={icon.viewBox}
