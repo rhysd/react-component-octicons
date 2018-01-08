@@ -8,14 +8,9 @@ export interface OcticonProps {
 
 export default class Octicon extends React.PureComponent<OcticonProps> {
     render() {
-        const { name, zoom, style } = this.props;
+        const { name, zoom } = this.props;
         const icon: IconInfo = OCTICONS[name];
-        const sty: React.CSSProperties = { display: 'inline-block', verticalAlign: 'text-top' };
-        if (style !== undefined) {
-            Object.keys(style).forEach(p => {
-                sty[p] = style[p];
-            });
-        }
+        const style = { display: 'inline-block', verticalAlign: 'text-top', ...this.props.style };
 
         let width, height;
         if (zoom) {
@@ -33,7 +28,7 @@ export default class Octicon extends React.PureComponent<OcticonProps> {
 
         return (
             <svg
-                style={sty}
+                style={style}
                 width={width}
                 height={height}
                 viewBox={icon.viewBox}
