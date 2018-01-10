@@ -5,9 +5,7 @@ React Component for Octicons
 [![codecov](https://codecov.io/gh/rhysd/react-component-octicons/branch/master/graph/badge.svg)](https://codecov.io/gh/rhysd/react-component-octicons)
 
 [react-component-octicons][] is a [React][] component library for the latest [Octicons][] (v7.x).
-This library wraps SVG icons and provides one React component `<Octicon/>`.
-
-This library is built and ready for [TypeScript][].
+This library wraps SVG icons and provides one React component `<Octicon/>`. Built by and ready for [TypeScript][].
 
 This library has no dependency because all `<svg>` elements for octicons are embedded in library.
 You don't need any source code bundler to use this library.
