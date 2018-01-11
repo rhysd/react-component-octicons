@@ -19,7 +19,12 @@ render(
             <Octicon name="mark-github" zoom="100%" />
         </div>
 
-        <Octicon name="verified" zoom="x1.5" style={{color: 'green'}}/>
+        <h3>Custom: Styled Icon</h3>
+        <Octicon
+            name="verified"
+            zoom="x1.5"
+            style={{ color: 'green', marginLeft: '100px', transform: 'rotate(90deg)' }}
+        />
     </main>,
     document.getElementById('root'),
 );
