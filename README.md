@@ -87,6 +87,28 @@ test.tsx(5,17): error TS2322: Type '{ name: "allow-right"; }' is not assignable 
       Type '"allow-right"' is not assignable to type 'OcticonSymbol'.
 ```
 
+## Development
+
+Following is a process to develop this library.
+
+```sh
+$ # Install all development dependencies
+$ npm install
+
+$ # Build the library and run all unit tests
+$ npm test
+
+$ # See manually if the library is working
+$ # Open http://localhost:4321 in your browser
+$ npm run smoke-test
+
+$ # Run storybook locally on port 6006
+$ npm run storybook
+
+$ # Build storybook (catalog site) in docs/ directory
+$ npm run build-storybook
+```
+
 ## License
 
 [Distributed under the MIT License](LICENSE.txt).
