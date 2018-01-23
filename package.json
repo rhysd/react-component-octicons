@@ -5,7 +5,10 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "@storybook/addon-notes": "^3.3.10",
+    "@storybook/addons": "^3.3.10",
     "@storybook/cli": "^3.3.10",
+    "@storybook/react": "^3.3.10",
     "@types/enzyme": "^3.1.6",
     "@types/enzyme-adapter-react-16": "^1.0.1",
     "@types/mocha": "^2.2.46",
@@ -24,12 +27,7 @@
     "react-dom": "^16.2.0",
     "ts-node": "^4.1.0",
     "tslint": "^5.8.0",
-    "typescript": "^2.6.2",
-    "@storybook/react": "^3.3.10",
-    "@storybook/addon-actions": "^3.3.10",
-    "@storybook/addon-links": "^3.3.10",
-    "@storybook/addons": "^3.3.10",
-    "babel-core": "^6.26.0"
+    "typescript": "^2.6.2"
   },
   "scripts": {
     "gen": "ts-node ./scripts/generate.ts",
