@@ -2386,3 +2386,5 @@ export type OcticonSymbol =
     | 'watch'
     | 'x'
     | 'zap';
+
+export const OCTICONS_VERSION = '7.1.0';

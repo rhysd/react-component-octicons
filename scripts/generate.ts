@@ -48,6 +48,8 @@ ${elems.join('\n')}
 
 export type OcticonSymbol =
   ${symbols.map(s => `'${s}'`).join(' |\n  ')};
+
+export const OCTICONS_VERSION = '${require('octicons/package.json').version}';
 `;
 
 fs.writeFileSync('index.tsx', template + constant, 'utf8');
