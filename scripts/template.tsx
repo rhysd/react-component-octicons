@@ -50,3 +50,4 @@ interface IconInfo {
     aria: boolean;
     path: JSX.Element;
 }
+

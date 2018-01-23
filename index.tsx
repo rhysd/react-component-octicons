@@ -50,6 +50,7 @@ interface IconInfo {
     aria: boolean;
     path: JSX.Element;
 }
+
 const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
     alert: {
         version: '1.1',

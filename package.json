@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "@storybook/cli": "^3.3.10",
     "@types/enzyme": "^3.1.6",
     "@types/enzyme-adapter-react-16": "^1.0.1",
     "@types/mocha": "^2.2.46",
@@ -23,7 +24,12 @@
     "react-dom": "^16.2.0",
     "ts-node": "^4.1.0",
     "tslint": "^5.8.0",
-    "typescript": "^2.6.2"
+    "typescript": "^2.6.2",
+    "@storybook/react": "^3.3.10",
+    "@storybook/addon-actions": "^3.3.10",
+    "@storybook/addon-links": "^3.3.10",
+    "@storybook/addons": "^3.3.10",
+    "babel-core": "^6.26.0"
   },
   "scripts": {
     "gen": "ts-node ./scripts/generate.ts",
@@ -35,7 +41,9 @@
     "test-dts": "tsc --jsx react --noEmit test/dts/test.tsx index.d.ts",
     "test-unit": "nyc mocha test/unit",
     "test": "npm run build && npm run test-dts && npm run test-unit",
-    "preversion": "npm run test"
+    "preversion": "npm run test",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
