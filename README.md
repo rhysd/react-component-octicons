@@ -10,6 +10,8 @@ This library wraps SVG icons and provides one React component `<Octicon/>`. Buil
 This library has no dependency because all `<svg>` elements for octicons are embedded in library.
 You don't need any source code bundler to use this library.
 
+To see the catalog of icons, please visit [the document page][] built with [Storybook][].
+
 ## Installation
 
 ```
@@ -90,3 +92,5 @@ test.tsx(5,17): error TS2322: Type '{ name: "allow-right"; }' is not assignable 
 [React]: https://github.com/facebook/react
 [react-component-octicons]: https://github.com/rhysd/react-component-octicons
 [TypeScript]: https://www.typescriptlang.org/
+[the document page]: https://rhysd.github.io/react-component-octicons
+[Storybook]: https://storybook.js.org/
