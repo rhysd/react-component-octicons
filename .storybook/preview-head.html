@@ -1,6 +1,30 @@
 <script>exports = {};</script>
 <style>
-  .icon-sample {
+  html {
+    font-family: -apple-system, ".SFNSText-Regular", "San Francisco", BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+    font-size: 15px;
+  }
+  .icon-sample-body > * {
     padding: 0 0.5rem;
+    text-align: center;
+  }
+  .icon-sample-head > * {
+    font-size: 1em;
+    color: #828282;
+  }
+  .samples-table {
+    border-collapse: collapse;
+  }
+  .samples-table th, .samples-table td {
+    border: 1px solid rgb(193, 193, 193);
+    padding: 0.5rem;
+  }
+  .samples-title {
+    font-weight: normal;
+    color: grey;
+  }
+  @keyframes spin-example {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 </style>

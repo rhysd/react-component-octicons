@@ -1,6 +1,7 @@
 /node_modules
 /.nyc_output
 /coverage
-*.js
+/index.js
+/test/**/*.js
 *.js.map
 *.d.ts
