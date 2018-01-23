@@ -18,6 +18,7 @@
   "files": [
     "index.tsx",
     "test/smoke/test.tsx",
-    "test/unit/octicon.tsx"
+    "test/unit/octicon.tsx",
+    "test/unit/constant.ts"
   ]
 }
