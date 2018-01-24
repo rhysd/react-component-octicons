@@ -73,9 +73,31 @@ const ForkMeOnGitHubRibbon = (
     </a>
 );
 
+const ExampleCode = props => (
+    <pre className="code-sample">
+        <code>
+            {`import Octicon from 'react-component-octicons';
+
+<Octicon name="${props.name}"/>`}
+        </code>
+    </pre>
+);
+
+const IconDescription = props => (
+    <div className="icon-description">
+        <a href={`https://octicons.github.com/icon/${props.name}/`} rel="noopener" target="_blank">{`'${
+            props.name
+        }' octicon`}</a>{' '}
+        component for React.
+        <ExampleCode name={props.name} />
+    </div>
+);
+
 const IconDemo = props => (
     <main>
         {ForkMeOnGitHubRibbon}
+        <h2 className="samples-title">Description</h2>
+        <IconDescription name={props.name} />
         <h2 className="samples-title">Sized Icons</h2>
         <SizesTable name={props.name} />
         <h2 className="samples-title">Styled Icons</h2>
