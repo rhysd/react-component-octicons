@@ -81,6 +81,17 @@ describe('<Octicon>', function() {
                     assert.equal(style!.display, 'flex');
                 });
             });
+
+            describe('"className" prop', function() {
+                it('should set className to underlying <svg> element', function() {
+                    const w = shallow(<Octicon name={symbol} className="class-name-test" />);
+                    const className = w
+                        .find('svg')
+                        .first()
+                        .props().className;
+                    assert.equal(className, 'class-name-test');
+                });
+            });
         });
     }
 });

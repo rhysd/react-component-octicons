@@ -4,11 +4,12 @@ export interface OcticonProps {
     name: OcticonSymbol;
     zoom?: string;
     style?: React.CSSProperties;
+    className?: string;
 }
 
 export default class Octicon extends React.PureComponent<OcticonProps> {
     render() {
-        const { name, zoom } = this.props;
+        const { name, zoom, className } = this.props;
         const icon: IconInfo = OCTICONS[name];
         const style = { display: 'inline-block', verticalAlign: 'text-top', ...this.props.style };
 
@@ -28,6 +29,7 @@ export default class Octicon extends React.PureComponent<OcticonProps> {
 
         return (
             <svg
+                className={className}
                 style={style}
                 width={width}
                 height={height}
@@ -50,7 +52,6 @@ interface IconInfo {
     aria: boolean;
     path: JSX.Element;
 }
-
 const OCTICONS: { [T in OcticonSymbol]: IconInfo } = {
     alert: {
         version: '1.1',

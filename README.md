@@ -47,20 +47,24 @@ render(
 );
 ```
 
-### `name` property
+### `name` property (required)
 
 `name` is a symbol name for an icon. Symbol names are described in [Octicons document][Octicons].
 
-### `zoom` property
+### `zoom` property (optional)
 
 `zoom` is a string value and it represents the zoom factor of the icon.
 
 - `x{N}`: `N` is a number (integer or float). Zoom the icon by xN (i.e. `x4` means 4 times bigger than normal).
 - `N%`: `N` is a number between 0~100. It means N% size of its parent element. So `100%` means to fit to the parent element.
 
-### `style` property
+### `style` property (optional)
 
 `style` is a CSS property to specify the style of the icon itself. The styles are applied to underlying `<svg>` element.
+
+### `className` property (optional)
+
+`className` is a class name of underlying `<svg>` element.
 
 ## Typo Safety for Icon Names
 
