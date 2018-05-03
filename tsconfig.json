@@ -11,7 +11,7 @@
     "noUnusedParameters": true,
     "noEmitOnError": true,
     "strictNullChecks": true,
-    "target": "es5",
+    "target": "es2015",
     "sourceMap": true,
     "jsx": "react"
   },
