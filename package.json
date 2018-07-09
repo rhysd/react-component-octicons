@@ -44,7 +44,7 @@
     "test": "npm run build && npm run test-dts && npm run test-unit",
     "preversion": "npm run test",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook && mv storybook-static docs"
+    "build-storybook": "rm -r docs/ && build-storybook && mv storybook-static docs"
   },
   "repository": {
     "type": "git",
