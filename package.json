@@ -61,7 +61,6 @@
   "files": [
     "index.js",
     "index.js.map",
-    "index.tsx",
     "index.d.ts",
     "README.md",
     "LICENSE.txt"

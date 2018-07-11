@@ -2405,4 +2405,4 @@ export type OcticonSymbol =
     | 'link-external'
     | 'archive';
 
-export const OCTICONS_VERSION = '7.3.0';
+export const OCTICONS_VERSION = '7.4.0';
