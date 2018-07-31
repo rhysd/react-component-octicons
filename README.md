@@ -6,7 +6,7 @@ React Component for Octicons
 
 **[Octicons now support React officially](https://www.npmjs.com/package/@githubprimer/octicons-react). I recommend to try it at first.**
 
-[react-component-octicons][] is a [React][] component library for the latest [Octicons][] (v7.x).
+[react-component-octicons][] is a [React][] component library for the latest [Octicons][] (v8.x).
 This library wraps SVG icons and provides one React component `<Octicon/>`. Built by and ready for [TypeScript][].
 
 This library has no dependency because all `<svg>` elements for octicons are embedded in library.
